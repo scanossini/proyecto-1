@@ -4,15 +4,119 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title> Números Primos</title>
+
     <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
-
-    <title>Proyecto 1</title>
-  </head>
-  <body>
-    <h1>Proyecto 1</h1>
-
+    <link id="theme" rel="stylesheet" href="css/greyTheme.css">
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
     <!-- JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+  </head>
+  <body class="w3-theme-d1" onload="loadStorage()">
+
+    <!-- Navegacion -->
+    <nav class="navbar navbar-collapse w3-theme-dark navbar-dark">
+
+      <a class="navbar-brand" href="http://uns.edu.ar/" target="_blank">
+        <img alt="logo" src="img/logo-uns.png" width="100px">
+      </a>
+      <h1 class="headerFont">Números primos</h1>  
+         
+    <div>
+      <label class="switch">
+        <input type="checkbox" id="themeButton">
+        <span class="slider round"></span>
+      </label>
+    </div>
+      <button class="navbar-toggler"  type="button" data-toggle="collapse"
+      data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse nav-item navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav" id="textoLista">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="showDiv('check');">Chequear Primo<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showDiv('previous');">Anterior Primo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showDiv('next');">Siguiente Primo</a>
+          </li>    
+        </ul>
+      </div>  
+    </nav>
+   
+    <div style="text-align:center;"  class="w3-theme-d1" id="checkPrime">
+      <br>
+      <input class="bg-secondary" style="text-align: center;" placeholder="Ingrese un entero" type="number" min="1" id="inputCheck">
+      <br><br>
+      <p style="text-align:center">El número ingresado</p> <b id="resultCheck"></b>
+      <br>
+    </div>
+
+    <div style="text-align:center; display: none;" class="w3-theme-d1" id="previousPrime">
+      <br>
+      <input class="bg-secondary" style="text-align: center;" placeholder="Ingrese un entero" type="number" min="3" id="inputPrevious">
+      <br><br>
+      <p style="text-align:center">El mayor número primo menor al ingresado es</p> <b class="result true" id="resultPrevious"></b>
+      <br>
+    </div>
+
+    <div style="text-align:center; display: none;" class="w3-theme-d1" id="nextPrime">
+      <br>
+      <input class="bg-secondary" style="text-align: center;" placeholder="Ingrese un entero" type="number" min="1" id="inputNext">
+      <br><br>
+      <p style="text-align:center">El menor número primo mayor al ingresado es</p> <b class="result true" id="resultNext"></b>
+      <br>
+    </div>
+
+    <!-- Historial -->
+
+    <div class="w3-theme-d1 pb-4" style="text-align:right;" id="histTitle"> Últimos números ingresados
+      <ul class="navbar-nav">
+        <br><li class="nav-item active" id="hist1">
+          <span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item" id="hist2">-</li>
+        <li class="nav-item" id="hist3">-</li>
+        <li class="nav-item" id="hist4">-</li>  
+        <li class="nav-item" id="hist5">-</li>      
+      </ul>    
+    </div>
+
+    <!-- Footer -->
+    
+    <footer class="footer mt-auto py-3">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h5 class="text-uppercase pb-3">Ingeniería de Aplicaciones Web</h5>
+            <p>Universidad Nacional del Sur</p>
+            <p>Primer cuatrimestre de 2020</p>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-3 mb-md-0 mb-3">
+            <ul class="list-unstyled">
+              <li class="pb-4">
+                Stefano Canossini
+              </li>
+              <li>
+                <a id="linkGithub" href="https://github.com/scanossini/" target="_blank">Perfil de GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/app.js"></script>
   </body>
 </html>
